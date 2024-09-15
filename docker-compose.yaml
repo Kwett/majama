@@ -15,7 +15,7 @@ services:
     volumes:
       - ./api_majama:/var/www/html
     environment:
-      - DATABASE_URL=mysql://kwett:admin@mysql-db:3306/Majama
+      - DATABASE_URL=mysql://user:pass@mysql-db:3306/Majama
       - APP_ENV=prod
       - APP_DEBUG=0
     depends_on:
@@ -31,8 +31,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: Majama
-      MYSQL_USER: kwett
-      MYSQL_PASSWORD: admin
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
     volumes:
       - mysql-data:/var/lib/mysql
     networks:
