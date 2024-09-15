@@ -16,7 +16,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 @media (min-width: 1280px) {
   :root {
-      background-image: url('assets/background/Background-left.svg'), url('assets/background/Background-right.svg');    
+      background-image: url('assets/background/Background-left.png'), url('assets/background/Background-right.png');    
       background-position: top left, top right;
       background-repeat: no-repeat;
       background-size: auto, auto;
