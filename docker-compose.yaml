@@ -1,0 +1,54 @@
+version: "3.8"
+
+networks:
+  majama-network:
+    driver: bridge
+
+services:
+  symfony-app:
+    build:
+      context: ./api_majama
+      dockerfile: Dockerfile
+    container_name: symfony-app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./api_majama:/var/www/html
+    environment:
+      - DATABASE_URL=mysql://kwett:admin@mysql-db:3306/Majama
+      - APP_ENV=prod
+      - APP_DEBUG=0
+    depends_on:
+      - mysql-db
+    networks:
+      - majama-network
+
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql-db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: Majama
+      MYSQL_USER: kwett
+      MYSQL_PASSWORD: admin
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - majama-network
+
+  angular-app:
+    build:
+      context: ./front_majama
+      dockerfile: Dockerfile
+    container_name: angular-app
+    ports:
+      - "4200:80"
+    depends_on:
+      - symfony-app
+    networks:
+      - majama-network
+
+volumes:
+  mysql-data:
