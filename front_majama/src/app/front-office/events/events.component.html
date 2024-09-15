@@ -1,0 +1,10 @@
+<app-nav></app-nav>
+
+<h1>EVENEMENTS</h1>
+
+<div class="filters">
+    <app-filter *ngFor="let filter of filters" [filter]="filter" (filterChange)="onFilterChange($event)"></app-filter>
+</div>
+<div class="card-container">
+    <app-card *ngFor="let event of filteredEvents" [event]="event" (click)="navigateTo(event['@id'])"></app-card>
+</div>

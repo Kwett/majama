@@ -1,0 +1,24 @@
+<div class="card">
+  <span class="image-container">
+    <img src="/assets/events/{{ event.background }}" alt="visual card">
+  </span>
+
+  <mat-chip-set class="tags" aria-label="Tags">
+    <mat-chip *ngFor="let type of event.types">{{ type.name }}</mat-chip>
+  </mat-chip-set>
+
+  <div class="info">
+
+    <span *ngIf="this.hasProject() && event.projects.length < 4" class="projects">
+      <ng-container *ngFor="let project of event.projects; let i = index">
+        <h3>{{ project.name }}</h3>
+        <h3 *ngIf="i < event.projects.length - 1"> x </h3>
+      </ng-container>
+      <h3> - {{ event.place.name }}</h3>
+    </span>
+
+    <h3 *ngIf="!this.hasProject()">{{ event.place.name }}</h3>
+    <p>{{ event.place.address_number }} {{ event.place.road }} {{ event.place.city.name }} {{ event.place.borough }}</p>
+    <h4>{{ event.time_start | date: 'dd.MM.yy'  }}</h4>
+  </div>
+</div>

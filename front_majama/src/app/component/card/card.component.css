@@ -1,0 +1,80 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 1rem;
+    background-color: #FFFFFF0A;
+    color: white;
+    height: 30rem;
+    width: 21.5rem;
+    box-shadow: 0 2px #17171714, 0 -1px #FFFFFF14;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card:hover img {
+    transform: scale(1.01);
+}
+
+.image-container {
+    height: 20rem;
+    width: 20rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    align-self: center;
+    margin-top: 0.6rem;
+    transition: border-radius 0.05s;
+}
+
+.card:hover .image-container {
+    border-radius: 0;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.6s;
+}
+
+.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) {
+    background-color: rgb(20, 20, 20);
+    font-family: 'Bright';
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+}
+
+.tags {
+    display: flex;
+    gap: 2rem;
+    padding-left: 1rem;
+}
+
+.info {
+    padding-left: 1rem;
+}
+
+.projects {
+    display: flex;
+    gap: 0.5rem;
+}
+
+h3 {
+    font-family: "Bright";
+    font-size: Headline Large/Size;
+    margin: 0;
+    letter-spacing: 0.05em;
+}
+
+p {
+    font-family: "Segoe UI";
+    font-size: Body Medium/Size;
+    line-height: 0.5rem;
+}
+
+h4 {
+    font-family: "Bright";
+    font-size: Body Medium/Size;
+    line-height: 0.5rem;
+    letter-spacing: 0.05em;
+}

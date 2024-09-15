@@ -1,0 +1,6 @@
+<div class="content">
+    <mat-slide-toggle *ngFor="let type of types" 
+                      (change)="onToggleType(type.name, $event.checked)">
+        {{ type.name }}
+    </mat-slide-toggle>
+  </div>

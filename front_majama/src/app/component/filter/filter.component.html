@@ -1,0 +1,9 @@
+<mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)" hideToggle>
+    <mat-expansion-panel-header>{{ filter }}</mat-expansion-panel-header>
+    <div class="filter-content" *ngIf="panelOpenState()">
+        <app-type *ngIf="filter === 'Type'" (typeFilterChange)="onTypeFilterChange($event)"></app-type>
+        <app-city *ngIf="filter === 'Ville'" (cityFilterChange)="onCityFilterChange($event)"></app-city>
+        <app-place *ngIf="filter === 'Lieu'" (placeFilterChange)="onPlaceFilterChange($event)"></app-place>
+    </div> 
+</mat-expansion-panel>
+

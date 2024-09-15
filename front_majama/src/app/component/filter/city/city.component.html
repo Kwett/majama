@@ -1,0 +1,6 @@
+<div class="content">
+    <mat-slide-toggle *ngFor="let city of cities"
+                        (change)="onToggleCity(city.name, $event.checked)">
+        {{ city.name }}
+    </mat-slide-toggle>
+</div>

@@ -1,0 +1,10 @@
+mat-expansion-panel {
+    margin: 0.5rem;
+    border-radius: 30px;
+}
+
+.mat-content .mat-content-hide-toggle {
+    margin-right: 0;
+    justify-content: center;
+}
+

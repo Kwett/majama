@@ -1,0 +1,10 @@
+<google-map *ngIf="apiLoaded"
+            [height]="mapHeight"
+            [width]="mapWidth"
+            [center]="{ lat: latitude, lng: longitude }"
+            [zoom]="zoom">
+            <map-marker
+            *ngIf="latitude && longitude"
+            [position]="markerPosition">
+          </map-marker>
+</google-map>
