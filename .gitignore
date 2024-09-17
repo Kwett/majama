@@ -1,15 +1,16 @@
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+dokcer-compose.yaml
 
 # Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
+front_majama/dist
+front_majama/tmp
+front_majama/out-tsc
+front_majama/bazel-out
 
 # Node
-/node_modules
-npm-debug.log
-yarn-error.log
+front_majama/node_modules
+front_majama/npm-debug.log
+front_majama/yarn-error.log
 
 # IDEs and editors
 .idea/
@@ -38,20 +39,20 @@ testem.log
 /typings
 
 # System files
-.DS_Store
-Thumbs.db
-src/environments/evironment.ts
-
+front_majama/.DS_Store
+front-majama/Thumbs.db
+front-majama/src/environments/environment.ts
+front-majama/src/environments/environment.prod.ts
 
 
 ###> symfony/framework-bundle ###
-/.env.local
-/.env.local.php
-/.env.*.local
-/config/secrets/prod/prod.decrypt.private.php
-/public/bundles/
-/var/
-/vendor/
+api_majama/.env.local
+api_majama/.env.local.php
+api_majama/.env.*.local
+api_majama/config/secrets/prod/prod.decrypt.private.php
+api_majama/public/bundles/
+api_majama/var/
+api_majama/vendor/
 ###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###
