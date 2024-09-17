@@ -23,7 +23,6 @@ export class TypeComponent {
     return this.typeService.types$
       .subscribe({
         next: (types: Type[]) => {
-          console.log('Types reçus du service :', types);
           this.types = types;
         },
         error: (error) => {
@@ -35,7 +34,6 @@ export class TypeComponent {
   onToggleType(type: string, isChecked: boolean) {
     if (isChecked) {
       this.selectedTypes.push(type);
-      console.log('selected types:', this.selectedTypes);
     } else {
       this.selectedTypes = this.selectedTypes.filter(t => t !== type);
     }

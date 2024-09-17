@@ -27,12 +27,18 @@ export class EventsComponent implements OnInit {
     return this.eventService.events$
       .subscribe({
         next: (events: Event[]) => {
-          console.log('Événements reçus du service :', events);
-          this.events = events.map((event: any) => ({
-            ...event,
-            timeStart: event.time_start,
-            timeEnd: event.time_end
-          }));
+          this.events = events.map((event: any) => {
+            const updatedPlace = {
+              ...event.place,
+              addressNumber: event.place.address_number,
+            };
+            return {
+              ...event,
+              place: updatedPlace,
+              timeStart: event.time_start,
+              timeEnd: event.time_end,
+            };
+          });
 
           this.applyFilters();
         },
@@ -44,9 +50,7 @@ export class EventsComponent implements OnInit {
 
     onFilterChange(updatedFilter: { [key: string]: string[] }) {
       this.selectedFilters = { ...this.selectedFilters, ...updatedFilter };
-      console.log("Filtres mis à jour :", this.selectedFilters);
       this.applyFilters();
-      console.log('evenements filtrés :', this.filteredEvents)
     }
   
     applyFilters() {
@@ -55,16 +59,11 @@ export class EventsComponent implements OnInit {
       if (noFiltersApplied) {
         const now = new Date();
         this.filteredEvents = this.events.filter(event => new Date(event.timeStart) > now);
-        console.log('filteredEvents :', this.filteredEvents);
       } else {
         this.filteredEvents = this.events.filter(event => {
           const typeFilter = !this.selectedFilters['Type']?.length || this.selectedFilters['Type'].some(type => event.types.map(t => t.name).includes(type));
           const cityFilter = !this.selectedFilters['Ville']?.length || this.selectedFilters['Ville'].includes(event.place.city.name);
           const placeFilter = !this.selectedFilters['Lieu']?.length || this.selectedFilters['Lieu'].includes(event.place.name);
-
-          console.log('typeFilter :', typeFilter);
-          console.log('cityFilter :', cityFilter);
-          console.log('placeFilter :', placeFilter);
 
           return typeFilter && cityFilter && placeFilter;
         });
@@ -72,7 +71,6 @@ export class EventsComponent implements OnInit {
     }
 
     navigateTo(url: string) {
-      console.log('id passed: ', url);
       const id = this.eventService.parseId(url);
       this.router.navigate(['/events', id]);
     }

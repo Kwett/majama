@@ -49,10 +49,20 @@ export class EventPageComponent implements OnInit {
   })
   }
 
-  loadEvent(eventId: number) {
+   loadEvent(eventId: number) {
     return this.eventService.getEvent(eventId).subscribe(
-      event => {
-        this.event = event;
+      (event: any) => { 
+        const updatedPlace = {
+          ...event.place,
+          addressNumber: event.place['address_number'], 
+        };
+
+        this.event = {
+          ...event,
+          place: updatedPlace,
+          timeStart: event.time_start,
+          timeEnd: event.time_end,
+        };
       },
       error => console.error('Error loading event:', error)
     );

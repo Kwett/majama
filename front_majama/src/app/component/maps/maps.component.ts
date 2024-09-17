@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges, AfterViewInit, OnChanges, ViewChild, HostListener } from '@angular/core';
-import { environment } from '../../../environments/evironment';
+import { environment } from '../../../environments/environment.prod';
 import { Loader } from '@googlemaps/js-api-loader';
 import { Coordinates } from '../../model/coordinates.model';
 import { MapsService } from '../../service/maps/maps.service';
@@ -72,7 +72,7 @@ export class MapsComponent implements AfterViewInit, OnChanges {
       apiKey: environment.googleMapsApiKey,
     });
 
-    loader.load().then(() => {
+    loader.importLibrary("core").then(() => {
       this.apiLoaded = true;
     });
   }
@@ -83,7 +83,6 @@ export class MapsComponent implements AfterViewInit, OnChanges {
         if (location.candidates && location.candidates.length > 0) {
           const lat = location.candidates[0].geometry.location.lat;
           const lng = location.candidates[0].geometry.location.lng;
-          console.log(`Latitude: ${lat}, Longitude: ${lng}`);
           this.latitude = lat;
           this.longitude = lng;
           this.markerPosition = {lat : this.latitude, lng: this.longitude};
@@ -99,8 +98,6 @@ export class MapsComponent implements AfterViewInit, OnChanges {
   }
 
   setMapDimensions() {
-
-    console.log('width', window.innerWidth);
     if (window.innerWidth < 480) {
       this.mapWidth = window.innerWidth + 'px';
     } else if(window.innerWidth < 768) {

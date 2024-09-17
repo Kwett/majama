@@ -26,7 +26,6 @@ export class CityComponent {
     return this.cityService.city$
     .subscribe({
       next: (city: City[]) => {
-        console.log('Villes reçues du service :', city);
         this.cities = city;
       },
       error: (error) => {
@@ -38,7 +37,6 @@ export class CityComponent {
   onToggleCity(city: string, isChecked: boolean) {
     if(isChecked) {
       this.selectedCities.push(city);
-      console.log('selected city:', this.selectedCities);
     } else {
       this.selectedCities = this.selectedCities.filter(c => c !== city)
     }

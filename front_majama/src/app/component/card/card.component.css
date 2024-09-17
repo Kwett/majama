@@ -26,10 +26,6 @@
     transition: border-radius 0.05s;
 }
 
-.card:hover .image-container {
-    border-radius: 0;
-}
-
 img {
     height: 100%;
     width: 100%;

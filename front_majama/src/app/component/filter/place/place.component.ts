@@ -24,7 +24,6 @@ export class PlaceComponent {
     return this.placeService.place$
     .subscribe({
       next: (place: Place[]) => {
-        console.log('Lieux reçus du service', place);
         this.places = place;
       },
       error: (error) => {
@@ -36,7 +35,6 @@ export class PlaceComponent {
   onTogglePlace(place: string, isChecked: boolean) {
       if (isChecked) {
         this.selectedPlaces.push(place);
-        console.log('selected places:', this.selectedPlaces)
       } else {
         this.selectedPlaces = this.selectedPlaces.filter(p => p !== place);
       }

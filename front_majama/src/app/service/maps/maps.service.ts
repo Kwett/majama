@@ -9,15 +9,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MapsService {
 
-  url: string ="http://localhost:8000/api/location";
+  url: string = "http://45.92.108.169:8000/api/location";
 
   constructor(private http: HttpClient) { }
 
   getEventLocation(place: Place): Observable<Coordinates> {
-
-    console.log('place recieved from component :', place);
-    const query: string = `${this.url}?query=`+ encodeURIComponent(`${place.name} ${place.addressNumber} ${place.road} ${place.city.name}"`);
-    console.log('query :', query);
+    const query: string = `${this.url}?query=`+ encodeURIComponent(`${place.name} ${place.addressNumber} ${place.road} ${place.city.name}`);
     return this.http.get<Coordinates>(query).pipe(
       map(response => {
         if (response.status === 'OK' && response.candidates.length > 0) {

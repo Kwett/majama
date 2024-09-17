@@ -8,7 +8,7 @@ import { Event } from '../../model/event.model';
 })
 export class EventService {
 
-  private url = "http://localhost:8000/api/events";
+  private url = "http://45.92.108.169:8000/api/events";
 
   private eventSubject = new BehaviorSubject<Event[]>([]);
   events$ = this.eventSubject.asObservable();
@@ -31,11 +31,9 @@ export class EventService {
   }
 
   getEvent(id: number) {
-    console.log('id passed :', id);
     const urlId = `${this.url}/${id}`;
     return this.http.get<Event>(urlId).pipe(
       map(response => {
-        console.log('Evenemnt reçu du service :', response);
         return response;
       }),
       catchError(error => {
