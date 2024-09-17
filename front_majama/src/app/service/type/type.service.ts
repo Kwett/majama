@@ -9,7 +9,7 @@ import { Type } from '../../model/type.model';
 })
 export class TypeService {
 
-  private readonly url = "http://http://45.92.108.169:8000/api/types";
+  private readonly url = "http://45.92.108.169:8000/api/types";
   typeSubject = new BehaviorSubject<Type[]>([]);
   types$ = this.typeSubject.asObservable();
 

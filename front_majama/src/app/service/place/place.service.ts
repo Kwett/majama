@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PlaceService {
 
-  private readonly url = "http://http://45.92.108.169:8000/api/places";
+  private readonly url = "http://45.92.108.169:8000/api/places";
   placeSubject = new BehaviorSubject<Place[]>([]);
   place$ = this.placeSubject.asObservable();
 

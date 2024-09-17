@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CityService {
-  private readonly url = "http://http://45.92.108.169:8000/api/cities";
+  private readonly url = "http://45.92.108.169:8000/api/cities";
   citySubject = new BehaviorSubject<City[]>([]);
   city$ = this.citySubject.asObservable();
 
