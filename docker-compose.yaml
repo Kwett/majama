@@ -9,10 +9,10 @@ services:
     volumes:
       - ./api_majama:/var/www/html
     environment:
-      - DATABASE_URL=mysql://Kwett:admin@mysql-db:3306/Majama
+      - DATABASE_URL=mysql://username:password@mysql-db:3306/Majama
       - APP_ENV=prod
       - APP_DEBUG=0
-      - GOOGLE_MAPS_API_KEY=AIzaSyBPoKn_fYWJkfbv6rY9OdboGlgJ7Nd1wcc
+      - GOOGLE_MAPS_API_KEY=API_KEY
       - TZ=Europe/Paris
     depends_on:
       - mysql-db
@@ -25,10 +25,10 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root_password
       MYSQL_DATABASE: Majama
-      MYSQL_USER: Kwett
-      MYSQL_PASSWORD: admin
+      MYSQL_USER: username
+      MYSQL_PASSWORD: password
       TZ: "Europe/Paris"
     volumes:
       - mysql-db:/var/lib/mysql
