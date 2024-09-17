@@ -8,7 +8,8 @@ framework:
 
     #esi: true
     #fragments: true
-
+    default_locale: fr
+    timezone: 'Europe/Paris'
 when@test:
     framework:
         test: true

@@ -15,7 +15,7 @@
     </div>
     <div class="time">
       <p>{{ this.formatDate(event.time_start) }}</p>
-      <p>{{ event.time_start | date: 'HH:mm' }} - {{ event.time_end | date: 'HH:mm' }}</p>
+      <p>{{ event.time_start | date: 'HH:mm' : '+0000' }} - {{ event.time_end | date: 'HH:mm' : '+0000' }}</p>
     </div>
     <div class="description">
       <p>{{ event.description }}</p>
@@ -34,7 +34,7 @@
       <app-maps [event]="event"></app-maps>
       <div class="event-details">
         <div class ="event-address">
-          <p>{{ event.place.name }}</p><br>
+          <p class="place-name">{{ event.place.name }}</p><br>
           <p>{{ event.place.address_number }} {{ event.place.road }}</p>
           <p class="city">{{ event.place.city.name }} <ng-container *ngIf="event.place.borough">- {{ event.place.borough }}</ng-container></p>
         </div>
@@ -60,9 +60,9 @@
                 <h4>{{ project.name }}</h4>
                 <p>{{ project.description }}</p>
                 <div class="rs">
-                  <p *ngIf="project.facebook">&#64;{{ project.facebook }}</p>
-                  <p *ngIf="project.instagram">&#64;{{ project.instagram }}</p>
-                  <p *ngIf="project.youtube">&#64;{{ project.youtube }}</p>
+                  <p *ngIf="project.facebook">facebook : &#64;{{ project.facebook }}</p>
+                  <p *ngIf="project.instagram">instagram : &#64;{{ project.instagram }}</p>
+                  <p *ngIf="project.youtube">youtube : &#64;{{ project.youtube }}</p>
                 </div>
             </div>
           </div>

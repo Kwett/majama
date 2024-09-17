@@ -1,5 +1,10 @@
 p {
   margin: 0px;
+  white-space: pre-wrap;
+}
+
+.place-name {
+  font-family: 'Bright'
 }
 
 .back-button {
@@ -15,7 +20,6 @@ p {
   font-size: 3.5rem;
   height: 5rem;
   width: 5rem;
-
 }
 
 .back-button mat-icon svg {
@@ -38,6 +42,7 @@ p {
   display: flex;
   flex-direction: column;
   margin-right: 10rem;
+  margin-bottom: 2rem;
 }
 
 h3 {
@@ -61,6 +66,7 @@ h4 {
   flex-wrap: wrap; 
   max-width: 100%; 
   overflow-wrap: break-word;
+  margin-bottom: 1rem;
 }
 
 .time {
@@ -69,6 +75,7 @@ h4 {
   font-family: 'Bright';
   font-size: 40px;
   color: white;
+  margin-bottom: 2rem;
 }
 
 .city {
@@ -161,6 +168,7 @@ app-maps {
 }
 
 .project-infos {
+  font-family: Roboto;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -211,6 +219,11 @@ app-maps {
 }
 
 @media (min-width: 769px) and (max-width: 1279px) {
+  
+  .back-button mat-icon {
+    text-shadow: -1px -1px 4px #999999, 1px -1px 4px #999999, -1px 1px 4px #999999, 1px 1px 4px #999999;
+  }
+
   .top-page {
     flex-direction: column-reverse;
     padding: 0px;
@@ -235,7 +248,8 @@ app-maps {
   }
 
   .event-header {
-    margin-right: 0;
+    margin-right: 3rem;
+    margin-left: 3rem;
   }
 
   .event-background {
@@ -271,6 +285,11 @@ app-maps {
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
+  
+  .back-button mat-icon {
+    text-shadow: -1px -1px 4px #999999, 1px -1px 4px #999999, -1px 1px 4px #999999, 1px 1px 4px #999999;
+  }
+
   .top-page {
     flex-direction: column-reverse;
     padding: 0px;
@@ -339,6 +358,11 @@ app-maps {
 }
 
 @media (min-width: 375px) and (max-width: 480px) {
+  
+  .back-button mat-icon {
+    text-shadow: -1px -1px 4px #999999, 1px -1px 4px #999999, -1px 1px 4px #999999, 1px 1px 4px #999999;
+  }
+
   .top-page {
     flex-direction: column-reverse;
     padding: 0px;
@@ -421,6 +445,11 @@ app-maps {
 }
 
 @media (max-width: 374px) {
+  
+  .back-button mat-icon {
+    text-shadow: -1px -1px 4px #999999, 1px -1px 4px #999999, -1px 1px 4px #999999, 1px 1px 4px #999999;
+  }
+
   .top-page {
     flex-direction: column-reverse;
     padding: 0px;
@@ -439,6 +468,7 @@ app-maps {
   .event-title {
     font-size: 48px;
     margin-left: 1rem;
+    margin-bottom: 1rem;
   }
 
   .time {

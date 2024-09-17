@@ -1,14 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @font-face {
     font-family: 'Bright';
-    src: url('/assets/font/bright-regular-1.ttf') format('ttf');
+    src: url('/assets/font/bright-regular-1.ttf') format('TrueType');
     font-weight: 100;
     font-style: sans-serif;
   }
 
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Bright, Roboto, "Helvetica Neue", sans-serif; }
 
 :root {
   background-color: #181818; 
@@ -24,7 +24,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 @media (min-width: 769px) and (max-width: 1279px) {
   :root {
-    background-image: url('assets/background/background.svg');
+    background-image: url('assets/background/Background.png');
     background-repeat: no-repeat;
     background-size: auto;
   }
@@ -32,7 +32,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 @media (min-width: 481px) and (max-width: 768px) {
   :root {
-    background-image: url('assets/background/background.svg');
+    background-image: url('assets/background/Background.png');
     background-repeat: no-repeat;
     background-size: auto;
   }
@@ -40,7 +40,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 @media (max-width: 480px) {
   :root {
-    background-image: url('assets/background/background.svg');
+    background-image: url('assets/background/Background.png');
     background-repeat: no-repeat;
     background-size: auto;
   }
