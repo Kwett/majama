@@ -45,6 +45,7 @@ services:
       - "443:443"
     volumes:
       - ./front_majama/nginx.conf:/etc/nginx/nginx.conf
+      - assets-volume:/usr/share/nginx/html/assets
     depends_on:
       - symfony-app
     networks:
@@ -52,6 +53,7 @@ services:
 
 volumes:
   mysql-db:
+  assets-volume:
 
 networks:
   majama-network:
