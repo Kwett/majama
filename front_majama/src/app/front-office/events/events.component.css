@@ -34,6 +34,13 @@
         box-shadow: 0 -1px #FFFFFF29;
     }
 
+    .no-result {
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
 @media (min-width: 769px) and (max-width: 1279px) {
     .card-container {
         grid-template-columns: 1fr 1fr;

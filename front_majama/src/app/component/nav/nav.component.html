@@ -1,1 +1,9 @@
-<img src="/assets/logo/logo.png" alt="Majama">
+<div class="header">
+    <img src="/assets/logo/logo.png" alt="Majama">
+    <ul>
+        <li (click)="navigateTo('events')"  [ngClass]="{ 'active': selected === 'events' }" class="eventLink">Evenements</li>
+        <li (click)="navigateTo('contact')" [ngClass]="{ 'active': selected === 'contact' }" class="contactLink">Contact</li>
+    </ul>
+</div>
+
+  

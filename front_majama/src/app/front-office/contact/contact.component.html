@@ -1,0 +1,22 @@
+<app-nav></app-nav>
+
+<h1>Contactez -nous</h1>
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <input type="text" id="name" formControlName="name" placeholder="John Dupiont">
+        <div class="error" *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+          Nom requis.
+        </div>
+      
+        <input type="email" id="email" formControlName="email" placeholder="Email@jamme.com">
+        <div class="error" *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+          Email invalide.
+        </div>
+      
+        <textarea id="message" formControlName="message" placeholder="Votre message"></textarea>
+        <div class="error" *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+          Message requis.
+        </div>
+      
+        <button mat-raised-button color="alert" type="submit" [disabled]="contactForm.invalid">Envoyer</button>
+      </form>

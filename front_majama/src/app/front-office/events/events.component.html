@@ -8,3 +8,6 @@
 <div class="card-container">
     <app-card *ngFor="let event of filteredEvents" [event]="event" (click)="navigateTo(event['@id'])"></app-card>
 </div>
+<div class="no-result" *ngIf="filteredEvents.length == 0">
+    <p>On reviens !</p>
+</div>

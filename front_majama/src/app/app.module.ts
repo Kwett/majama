@@ -10,9 +10,11 @@ import { FormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { EventsComponent } from './front-office/events/events.component';
@@ -25,6 +27,8 @@ import { PlaceComponent } from './component/filter/place/place.component';
 import { EventPageComponent } from './front-office/event-page/event-page.component';
 import { MapsComponent } from './component/maps/maps.component';
 import { ImageDialogComponent } from './component/image-dialog/image-dialog.component';
+import { ContactComponent } from './front-office/contact/contact.component';
+import { MessageDialogComponent } from './component/message-dialog/message-dialog.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,9 @@ import { ImageDialogComponent } from './component/image-dialog/image-dialog.comp
     PlaceComponent,
     EventPageComponent,
     MapsComponent,
-    ImageDialogComponent
+    ImageDialogComponent,
+    ContactComponent,
+    MessageDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -48,12 +54,14 @@ import { ImageDialogComponent } from './component/image-dialog/image-dialog.comp
     MatSlideToggleModule,
     MatAutocompleteModule,
     MatChipsModule,
+    MatButtonModule,
     FormsModule,
     MatIconModule,
     GoogleMapsModule,
     MatTabsModule,
     MatDividerModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule,
       ],
   providers: [
     provideAnimationsAsync()
