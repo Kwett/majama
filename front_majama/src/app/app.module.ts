@@ -29,6 +29,10 @@ import { MapsComponent } from './component/maps/maps.component';
 import { ImageDialogComponent } from './component/image-dialog/image-dialog.component';
 import { ContactComponent } from './front-office/contact/contact.component';
 import { MessageDialogComponent } from './component/message-dialog/message-dialog.component';
+import { LoginComponent } from './back-office/login/login.component';
+import { LoginDialogComponent } from './component/login-dialog/login-dialog.component';
+import { AdminComponent } from './back-office/admin/admin.component';
+import { AdminNavComponent } from './component/admin-nav/admin-nav.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +48,11 @@ import { MessageDialogComponent } from './component/message-dialog/message-dialo
     MapsComponent,
     ImageDialogComponent,
     ContactComponent,
-    MessageDialogComponent
+    MessageDialogComponent,
+    LoginComponent,
+    LoginDialogComponent,
+    AdminComponent,
+    AdminNavComponent
   ],
   imports: [
     BrowserModule,

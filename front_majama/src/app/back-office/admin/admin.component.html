@@ -1,0 +1,10 @@
+<app-admin-nav></app-admin-nav>
+<h1>Interface d'administration</h1>
+
+<h2>Evenements</h2>
+
+<div class="event-list">
+    <app-card *ngFor="let event of events" [event]="event"></app-card>
+</div>
+
+<button mat-raised-button color="alert">Ajouter un event</button>

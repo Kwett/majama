@@ -1,0 +1,62 @@
+img {
+    height: 2rem;
+    margin: 2rem;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: "Bright";
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+    font-size: 96px;
+    font-weight: 400;
+    line-height: 120px;
+    text-align: center;
+}
+
+.login {
+    background-color: rgb(40, 39, 39);
+    border-radius: 1rem;
+    border: 2px solid rgb(68, 68, 68);
+    width: 30rem;
+    justify-self: center;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.10);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#password, #mail {
+    width: 25rem;
+    height: 1.5rem;
+    margin-top: 1rem;
+}
+
+input {
+    border-radius: 0.5rem;
+    box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.65);
+    resize: none;
+    padding-left: 1rem;
+}
+
+.error {
+    font-family: Inter;
+    font-weight: 300;
+    color: red;
+}
+
+button {
+    margin-top: 2rem;
+    width: 7rem;
+    height: 2.5rem;
+    border-radius: 2rem;
+    background-color: rgb(49 49 49);
+    margin-left: 20rem;
+}
